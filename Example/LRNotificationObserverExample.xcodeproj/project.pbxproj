@@ -1,0 +1,529 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3333C74518208D1C0036A1C4 /* LRNotificationObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 3333C74418208D1C0036A1C4 /* LRNotificationObserver.m */; };
+		3333C74618208D1C0036A1C4 /* LRNotificationObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 3333C74418208D1C0036A1C4 /* LRNotificationObserver.m */; };
+		33B24EB618208B7000E866E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B24EB518208B7000E866E5 /* Foundation.framework */; };
+		33B24EB818208B7000E866E5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B24EB718208B7000E866E5 /* CoreGraphics.framework */; };
+		33B24EBA18208B7000E866E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B24EB918208B7000E866E5 /* UIKit.framework */; };
+		33B24EC018208B7000E866E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 33B24EBE18208B7000E866E5 /* InfoPlist.strings */; };
+		33B24EC218208B7000E866E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B24EC118208B7000E866E5 /* main.m */; };
+		33B24EC618208B7000E866E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B24EC518208B7000E866E5 /* AppDelegate.m */; };
+		33B24EC818208B7000E866E5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33B24EC718208B7000E866E5 /* Images.xcassets */; };
+		33B24ECF18208B7000E866E5 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B24ECE18208B7000E866E5 /* XCTest.framework */; };
+		33B24ED018208B7000E866E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B24EB518208B7000E866E5 /* Foundation.framework */; };
+		33B24ED118208B7000E866E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B24EB918208B7000E866E5 /* UIKit.framework */; };
+		33B24ED918208B7000E866E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 33B24ED718208B7000E866E5 /* InfoPlist.strings */; };
+		33D1E81F182091F600FD1553 /* LRNotificationObserverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D1E81E182091F600FD1553 /* LRNotificationObserverTests.m */; };
+		7167C33F94364271AD3C8EFA /* libPods-LRNotificationObserverExampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB5CC8BA75804C65B7584705 /* libPods-LRNotificationObserverExampleTests.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		33B24ED218208B7000E866E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33B24EAA18208B7000E866E5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 33B24EB118208B7000E866E5;
+			remoteInfo = LRNotificationObserverExample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3333C74318208D1C0036A1C4 /* LRNotificationObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LRNotificationObserver.h; path = ../../LRNotificationObserver/LRNotificationObserver.h; sourceTree = "<group>"; };
+		3333C74418208D1C0036A1C4 /* LRNotificationObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LRNotificationObserver.m; path = ../../LRNotificationObserver/LRNotificationObserver.m; sourceTree = "<group>"; };
+		33B24EB218208B7000E866E5 /* LRNotificationObserverExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LRNotificationObserverExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		33B24EB518208B7000E866E5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		33B24EB718208B7000E866E5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		33B24EB918208B7000E866E5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		33B24EBD18208B7000E866E5 /* LRNotificationObserverExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LRNotificationObserverExample-Info.plist"; sourceTree = "<group>"; };
+		33B24EBF18208B7000E866E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		33B24EC118208B7000E866E5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		33B24EC318208B7000E866E5 /* LRNotificationObserverExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LRNotificationObserverExample-Prefix.pch"; sourceTree = "<group>"; };
+		33B24EC418208B7000E866E5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		33B24EC518208B7000E866E5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		33B24EC718208B7000E866E5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		33B24ECD18208B7000E866E5 /* LRNotificationObserverExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LRNotificationObserverExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		33B24ECE18208B7000E866E5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		33B24ED618208B7000E866E5 /* LRNotificationObserverExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LRNotificationObserverExampleTests-Info.plist"; sourceTree = "<group>"; };
+		33B24ED818208B7000E866E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		33D1E81E182091F600FD1553 /* LRNotificationObserverTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LRNotificationObserverTests.m; path = ../../UnitTests/LRNotificationObserverTests.m; sourceTree = "<group>"; };
+		B8EB2E55DE9045319A1D1CD3 /* Pods-LRNotificationObserverExampleTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LRNotificationObserverExampleTests.xcconfig"; path = "Pods/Pods-LRNotificationObserverExampleTests.xcconfig"; sourceTree = "<group>"; };
+		DB5CC8BA75804C65B7584705 /* libPods-LRNotificationObserverExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LRNotificationObserverExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		33B24EAF18208B7000E866E5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33B24EB818208B7000E866E5 /* CoreGraphics.framework in Frameworks */,
+				33B24EBA18208B7000E866E5 /* UIKit.framework in Frameworks */,
+				33B24EB618208B7000E866E5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33B24ECA18208B7000E866E5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33B24ECF18208B7000E866E5 /* XCTest.framework in Frameworks */,
+				33B24ED118208B7000E866E5 /* UIKit.framework in Frameworks */,
+				33B24ED018208B7000E866E5 /* Foundation.framework in Frameworks */,
+				7167C33F94364271AD3C8EFA /* libPods-LRNotificationObserverExampleTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		33B24EA918208B7000E866E5 = {
+			isa = PBXGroup;
+			children = (
+				33B24EBB18208B7000E866E5 /* LRNotificationObserverExample */,
+				33B24ED418208B7000E866E5 /* LRNotificationObserverExampleTests */,
+				33B24EB418208B7000E866E5 /* Frameworks */,
+				33B24EB318208B7000E866E5 /* Products */,
+				B8EB2E55DE9045319A1D1CD3 /* Pods-LRNotificationObserverExampleTests.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		33B24EB318208B7000E866E5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				33B24EB218208B7000E866E5 /* LRNotificationObserverExample.app */,
+				33B24ECD18208B7000E866E5 /* LRNotificationObserverExampleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		33B24EB418208B7000E866E5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				33B24EB518208B7000E866E5 /* Foundation.framework */,
+				33B24EB718208B7000E866E5 /* CoreGraphics.framework */,
+				33B24EB918208B7000E866E5 /* UIKit.framework */,
+				33B24ECE18208B7000E866E5 /* XCTest.framework */,
+				DB5CC8BA75804C65B7584705 /* libPods-LRNotificationObserverExampleTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		33B24EBB18208B7000E866E5 /* LRNotificationObserverExample */ = {
+			isa = PBXGroup;
+			children = (
+				33B24EE418208B9A00E866E5 /* LRNotificationObserver */,
+				33B24EC418208B7000E866E5 /* AppDelegate.h */,
+				33B24EC518208B7000E866E5 /* AppDelegate.m */,
+				33B24EC718208B7000E866E5 /* Images.xcassets */,
+				33B24EBC18208B7000E866E5 /* Supporting Files */,
+			);
+			path = LRNotificationObserverExample;
+			sourceTree = "<group>";
+		};
+		33B24EBC18208B7000E866E5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				33B24EBD18208B7000E866E5 /* LRNotificationObserverExample-Info.plist */,
+				33B24EBE18208B7000E866E5 /* InfoPlist.strings */,
+				33B24EC118208B7000E866E5 /* main.m */,
+				33B24EC318208B7000E866E5 /* LRNotificationObserverExample-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		33B24ED418208B7000E866E5 /* LRNotificationObserverExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				33D1E81E182091F600FD1553 /* LRNotificationObserverTests.m */,
+				33B24ED518208B7000E866E5 /* Supporting Files */,
+			);
+			path = LRNotificationObserverExampleTests;
+			sourceTree = "<group>";
+		};
+		33B24ED518208B7000E866E5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				33B24ED618208B7000E866E5 /* LRNotificationObserverExampleTests-Info.plist */,
+				33B24ED718208B7000E866E5 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		33B24EE418208B9A00E866E5 /* LRNotificationObserver */ = {
+			isa = PBXGroup;
+			children = (
+				3333C74318208D1C0036A1C4 /* LRNotificationObserver.h */,
+				3333C74418208D1C0036A1C4 /* LRNotificationObserver.m */,
+			);
+			name = LRNotificationObserver;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		33B24EB118208B7000E866E5 /* LRNotificationObserverExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 33B24EDE18208B7000E866E5 /* Build configuration list for PBXNativeTarget "LRNotificationObserverExample" */;
+			buildPhases = (
+				33B24EAE18208B7000E866E5 /* Sources */,
+				33B24EAF18208B7000E866E5 /* Frameworks */,
+				33B24EB018208B7000E866E5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LRNotificationObserverExample;
+			productName = LRNotificationObserverExample;
+			productReference = 33B24EB218208B7000E866E5 /* LRNotificationObserverExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		33B24ECC18208B7000E866E5 /* LRNotificationObserverExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 33B24EE118208B7000E866E5 /* Build configuration list for PBXNativeTarget "LRNotificationObserverExampleTests" */;
+			buildPhases = (
+				C2211F5B3A4943CC84423738 /* Check Pods Manifest.lock */,
+				33B24EC918208B7000E866E5 /* Sources */,
+				33B24ECA18208B7000E866E5 /* Frameworks */,
+				33B24ECB18208B7000E866E5 /* Resources */,
+				90A2024AD0244749AAD6610A /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				33B24ED318208B7000E866E5 /* PBXTargetDependency */,
+			);
+			name = LRNotificationObserverExampleTests;
+			productName = LRNotificationObserverExampleTests;
+			productReference = 33B24ECD18208B7000E866E5 /* LRNotificationObserverExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		33B24EAA18208B7000E866E5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Luis Recuenco";
+				TargetAttributes = {
+					33B24ECC18208B7000E866E5 = {
+						TestTargetID = 33B24EB118208B7000E866E5;
+					};
+				};
+			};
+			buildConfigurationList = 33B24EAD18208B7000E866E5 /* Build configuration list for PBXProject "LRNotificationObserverExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 33B24EA918208B7000E866E5;
+			productRefGroup = 33B24EB318208B7000E866E5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				33B24EB118208B7000E866E5 /* LRNotificationObserverExample */,
+				33B24ECC18208B7000E866E5 /* LRNotificationObserverExampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		33B24EB018208B7000E866E5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33B24EC018208B7000E866E5 /* InfoPlist.strings in Resources */,
+				33B24EC818208B7000E866E5 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33B24ECB18208B7000E866E5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33B24ED918208B7000E866E5 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		90A2024AD0244749AAD6610A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-LRNotificationObserverExampleTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2211F5B3A4943CC84423738 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		33B24EAE18208B7000E866E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33B24EC618208B7000E866E5 /* AppDelegate.m in Sources */,
+				33B24EC218208B7000E866E5 /* main.m in Sources */,
+				3333C74518208D1C0036A1C4 /* LRNotificationObserver.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33B24EC918208B7000E866E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3333C74618208D1C0036A1C4 /* LRNotificationObserver.m in Sources */,
+				33D1E81F182091F600FD1553 /* LRNotificationObserverTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		33B24ED318208B7000E866E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 33B24EB118208B7000E866E5 /* LRNotificationObserverExample */;
+			targetProxy = 33B24ED218208B7000E866E5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		33B24EBE18208B7000E866E5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				33B24EBF18208B7000E866E5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		33B24ED718208B7000E866E5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				33B24ED818208B7000E866E5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		33B24EDC18208B7000E866E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		33B24EDD18208B7000E866E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		33B24EDF18208B7000E866E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LRNotificationObserverExample/LRNotificationObserverExample-Prefix.pch";
+				INFOPLIST_FILE = "LRNotificationObserverExample/LRNotificationObserverExample-Info.plist";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		33B24EE018208B7000E866E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LRNotificationObserverExample/LRNotificationObserverExample-Prefix.pch";
+				INFOPLIST_FILE = "LRNotificationObserverExample/LRNotificationObserverExample-Info.plist";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		33B24EE218208B7000E866E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8EB2E55DE9045319A1D1CD3 /* Pods-LRNotificationObserverExampleTests.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LRNotificationObserverExample.app/LRNotificationObserverExample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LRNotificationObserverExample/LRNotificationObserverExample-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "LRNotificationObserverExampleTests/LRNotificationObserverExampleTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-framework",
+					XCTest,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		33B24EE318208B7000E866E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8EB2E55DE9045319A1D1CD3 /* Pods-LRNotificationObserverExampleTests.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LRNotificationObserverExample.app/LRNotificationObserverExample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LRNotificationObserverExample/LRNotificationObserverExample-Prefix.pch";
+				INFOPLIST_FILE = "LRNotificationObserverExampleTests/LRNotificationObserverExampleTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-framework",
+					XCTest,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		33B24EAD18208B7000E866E5 /* Build configuration list for PBXProject "LRNotificationObserverExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33B24EDC18208B7000E866E5 /* Debug */,
+				33B24EDD18208B7000E866E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		33B24EDE18208B7000E866E5 /* Build configuration list for PBXNativeTarget "LRNotificationObserverExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33B24EDF18208B7000E866E5 /* Debug */,
+				33B24EE018208B7000E866E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		33B24EE118208B7000E866E5 /* Build configuration list for PBXNativeTarget "LRNotificationObserverExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33B24EE218208B7000E866E5 /* Debug */,
+				33B24EE318208B7000E866E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 33B24EAA18208B7000E866E5 /* Project object */;
+}
