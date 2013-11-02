@@ -89,6 +89,8 @@ static SEL sOneArgumentsSelector;
 
 - (instancetype)initWithNotificationCenter:(NSNotificationCenter *)notificationCenter
 {
+    NSParameterAssert(notificationCenter);
+    
     self = [super init];
     if (self)
     {
@@ -130,6 +132,8 @@ static SEL sOneArgumentsSelector;
            dispatchQueue:(dispatch_queue_t)dispatchQueue
                    block:(LRNotificationObserverBlock)block
 {
+    NSParameterAssert(block);
+    
     [self stopObserving];
     
     self.name = name;
