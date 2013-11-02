@@ -266,7 +266,7 @@ static SEL sOneArgumentsSelector;
     _operationQueue = nil;
     
 #if !OS_OBJECT_USE_OBJC
-    if (!_dispatchQueue)
+    if (_dispatchQueue)
     {
         dispatch_release(_dispatchQueue);
     }
