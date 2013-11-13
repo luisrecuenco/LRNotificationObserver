@@ -121,7 +121,7 @@ describe(@"LRNotificationObserverTests", ^{
                 [[theValue(completionBlockCalled) should] beYes];
             });
             
-            it(@"sut with operation queue block called async ", ^{
+            it(@"sut with operation queue block called async", ^{
                 
                 NSString *notificationName = @"aNotificationName";
                 NSOperationQueue *opQueue = [[NSOperationQueue alloc] init];
@@ -139,7 +139,7 @@ describe(@"LRNotificationObserverTests", ^{
                 [[expectFutureValue(theValue(completionBlockCalled)) shouldEventually] beYes];
             });
             
-            it(@"sut with dispatch queue block called async ", ^{
+            it(@"sut with dispatch queue block called async", ^{
                 
                 NSString *notificationName = @"aNotificationName";
                 dispatch_queue_t serialQueue = dispatch_queue_create("com.LRNotificationObserver.LRNotificationObserverTestsQueue", DISPATCH_QUEUE_SERIAL);
@@ -261,7 +261,7 @@ describe(@"LRNotificationObserverTests", ^{
                 
                 [notificationCenter postNotificationName:notificationName object:nil];
                 
-                [[callbackQueue shouldEventually] beIdenticalTo:opQueue];
+                [[expectFutureValue(callbackQueue) shouldEventually] beIdenticalTo:opQueue];
             });
             
             it(@"sut block should be called in correct dispatch queue", ^{
@@ -306,7 +306,7 @@ describe(@"LRNotificationObserverTests", ^{
                 [notificationCenter postNotificationName:notificationName object:nil];
             });
             
-            it(@"sut with operation queue called async ", ^{
+            it(@"sut with operation queue called async", ^{
                 
                 NSString *notificationName = @"aNotificationName";
                 NSOperationQueue *opQueue = [[NSOperationQueue alloc] init];
@@ -322,7 +322,7 @@ describe(@"LRNotificationObserverTests", ^{
                 [notificationCenter postNotificationName:notificationName object:nil];
             });
             
-            it(@"sut with dispatch queue called async ", ^{
+            it(@"sut with dispatch queue called async", ^{
                 
                 NSString *notificationName = @"aNotificationName";
                 dispatch_queue_t serialQueue = dispatch_queue_create("com.LRNotificationObserver.LRNotificationObserverTestsQueue", DISPATCH_QUEUE_SERIAL);
@@ -443,7 +443,7 @@ describe(@"LRNotificationObserverTests", ^{
                 
                 [notificationCenter postNotificationName:notificationName object:nil];
                 
-                [[sCallbackQueue shouldEventually] beIdenticalTo:opQueue];
+                [[expectFutureValue(sCallbackQueue) shouldEventually] beIdenticalTo:opQueue];
             });
             
             it(@"sut selector should be called in correct dispatch queue", ^{
