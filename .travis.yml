@@ -1,0 +1,5 @@
+language: objective-c
+before_install:
+    - cd Example
+script: xcodebuild test -workspace LRNotificationObserverExample.xcworkspace -scheme LRNotificationObserverExampleTests -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+
