@@ -28,8 +28,11 @@ static SEL sOneArgumentsSelector;
 
 static NSNotification *sNotification;
 
-static NSOperationQueue *sCallbackQueue;
-static dispatch_queue_t sCallbackDispatchQueue;
+static NSOperationQueue *sCallbackOperationQueue;
+
+static const void *sCallbackDispatchQueueTag = &sCallbackDispatchQueueTag;
+static const void *sCallbackDispatchQueueContext;
+
 
 @interface LRNotificationTarget : NSObject
 
@@ -48,16 +51,15 @@ static dispatch_queue_t sCallbackDispatchQueue;
 
 - (void)notificationFired
 {
-    // Nothing
-    sCallbackQueue = [NSOperationQueue currentQueue];
-    sCallbackDispatchQueue = dispatch_get_current_queue();
+    sCallbackOperationQueue = [NSOperationQueue currentQueue];
+    sCallbackDispatchQueueContext = dispatch_get_specific(sCallbackDispatchQueueTag);
 }
 
 - (void)notificationFired:(NSNotification *)aNotification
 {
     sNotification = aNotification;
-    sCallbackQueue = [NSOperationQueue currentQueue];
-    sCallbackDispatchQueue = dispatch_get_current_queue();
+    sCallbackOperationQueue = [NSOperationQueue currentQueue];
+    sCallbackDispatchQueueContext = dispatch_get_specific(sCallbackDispatchQueueTag);
 }
 
 @end
@@ -268,19 +270,24 @@ describe(@"LRNotificationObserverTests", ^{
                 
                 NSString *notificationName = @"aNotificationName";
                 
-                __block dispatch_queue_t callbackQueue = NULL;
-                
                 dispatch_queue_t serialQueue = dispatch_queue_create("com.LRNotificationObserver.LRNotificationObserverTestsQueue", DISPATCH_QUEUE_SERIAL);
+                
+                void *queueTag = &queueTag;
+                void *queueContext = &queueContext;
+                
+                __block void *callbackQueueContext = NULL;
+                
+                dispatch_queue_set_specific(serialQueue, queueTag, queueContext, NULL);
                 
                 [sut configureForName:notificationName
                         dispatchQueue:serialQueue
                                 block:^(NSNotification *note) {
-                                    callbackQueue = dispatch_get_current_queue();
+                                    callbackQueueContext = dispatch_get_specific(queueTag);
                                 }];
                 
                 [notificationCenter postNotificationName:notificationName object:nil];
                 
-                [[expectFutureValue(theValue(callbackQueue == serialQueue)) shouldEventually] beYes];
+                [[expectFutureValue(theValue(queueContext == callbackQueueContext)) shouldEventually] beYes];
             });
         });
         
@@ -289,8 +296,8 @@ describe(@"LRNotificationObserverTests", ^{
             beforeEach(^{
                 target = [[LRNotificationTarget alloc] init];
                 sNotification = nil;
-                sCallbackQueue = nil;
-                sCallbackDispatchQueue = nil;
+                sCallbackOperationQueue = nil;
+                sCallbackDispatchQueueContext = NULL;
             });
             
             it(@"sut called sync", ^{
@@ -443,7 +450,7 @@ describe(@"LRNotificationObserverTests", ^{
                 
                 [notificationCenter postNotificationName:notificationName object:nil];
                 
-                [[expectFutureValue(sCallbackQueue) shouldEventually] beIdenticalTo:opQueue];
+                [[expectFutureValue(sCallbackOperationQueue) shouldEventually] beIdenticalTo:opQueue];
             });
             
             it(@"sut selector should be called in correct dispatch queue", ^{
@@ -452,6 +459,10 @@ describe(@"LRNotificationObserverTests", ^{
                 
                 dispatch_queue_t serialQueue = dispatch_queue_create("com.LRNotificationObserver.LRNotificationObserverTestsQueue", DISPATCH_QUEUE_SERIAL);
                 
+                void *queueContext = &queueContext;
+                
+                dispatch_queue_set_specific(serialQueue, sCallbackDispatchQueueTag, queueContext, NULL);
+                
                 [sut configureForName:notificationName
                         dispatchQueue:serialQueue
                                target:target
@@ -459,7 +470,7 @@ describe(@"LRNotificationObserverTests", ^{
                 
                 [notificationCenter postNotificationName:notificationName object:nil];
                 
-                [[expectFutureValue(theValue(sCallbackDispatchQueue == serialQueue)) shouldEventually] beYes];
+                [[expectFutureValue(theValue(sCallbackDispatchQueueContext == queueContext)) shouldEventually] beYes];
             });
         });
     });
