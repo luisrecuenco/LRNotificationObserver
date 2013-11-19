@@ -20,6 +20,20 @@
                ReferencedContainer = "container:LRNotificationObserverExample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "33B24ECC18208B7000E866E5"
+               BuildableName = "LRNotificationObserverExampleTests.xctest"
+               BlueprintName = "LRNotificationObserverExampleTests"
+               ReferencedContainer = "container:LRNotificationObserverExample.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
