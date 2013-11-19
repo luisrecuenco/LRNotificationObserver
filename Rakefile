@@ -16,7 +16,7 @@ namespace :test do
 end
 
 desc "Run the LRNotificationObserver tests"
-task :test => 'test:xctool' do
+task :test => 'test:xcodebuild' do
     if $success
         puts "\033[0;32m** All tests executed successfully **"
     else
