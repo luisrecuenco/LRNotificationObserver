@@ -1,17 +1,22 @@
 namespace :test do
-    desc "Install xctool if necessary"
+    desc "Install xctool latest version necessary to run the tests"
     task :prepare_for_xctool do
         system("brew update && brew uninstall xctool && brew install xctool --HEAD")
     end
 
+    desc "Install cocoa pods dependencies"
+    task :cocoa_pods do
+        system("cd Example && pod install")
+    end
+
     desc "Run the LRNotificationObserver tests with xctool"
-    task :xctool => :prepare_for_xctool do
-        $success = system("cd Example && pod install && xctool test -workspace LRNotificationObserverExample.xcworkspace -scheme LRNotificationObserverExampleTests -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO")
+    task :xctool => :cocoa_pods do
+        $success = system("cd Example && xctool test -workspace LRNotificationObserverExample.xcworkspace -scheme LRNotificationObserverExampleTests -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO")
     end
 
     desc "Run the LRNotificationObserver tests with xcodebuild"
-    task :xcodebuild do
-        $success = system('cd Example && pod install && xcodebuild test -workspace LRNotificationObserverExample.xcworkspace -scheme LRNotificationObserverExampleTests -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO')
+    task :xcodebuild => :cocoa_pods do
+        $success = system('cd Example && xcodebuild test -workspace LRNotificationObserverExample.xcworkspace -scheme LRNotificationObserverExampleTests -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO')
     end
 end
 

@@ -1,3 +1,4 @@
 language: objective-c
-script: rake
-
+before_install:
+    - rake test:prepare_for_xctool
+script: rake test
