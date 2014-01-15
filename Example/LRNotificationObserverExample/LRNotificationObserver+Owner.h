@@ -56,3 +56,43 @@
              action:(SEL)action;
 
 @end
+
+@interface LRNotificationObserver (Owner_Object)
+
++ (void)observeName:(NSString *)name
+             object:(id)object
+              owner:(id)owner
+              block:(LRNotificationObserverBlock)block;
+
++ (void)observeName:(NSString *)name
+             object:(id)object
+              owner:(id)owner
+     operationQueue:(NSOperationQueue *)operationQueue
+              block:(LRNotificationObserverBlock)block;
+
++ (void)observeName:(NSString *)name
+             object:(id)object
+              owner:(id)owner
+      dispatchQueue:(dispatch_queue_t)dispatchQueue
+              block:(LRNotificationObserverBlock)block;
+
++ (void)observeName:(NSString *)name
+             object:(id)object
+              owner:(id)owner
+             target:(id)target
+             action:(SEL)action;
+
++ (void)observeName:(NSString *)name
+             object:(id)object
+              owner:(id)owner
+     operationQueue:(NSOperationQueue *)operationQueue
+             target:(id)target
+             action:(SEL)action;
+
++ (void)observeName:(NSString *)name
+             object:(id)object
+              owner:(id)owner
+      dispatchQueue:(dispatch_queue_t)dispatchQueue
+             target:(id)target
+             action:(SEL)action;
+@end

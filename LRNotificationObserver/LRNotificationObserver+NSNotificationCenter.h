@@ -49,3 +49,38 @@
                          target:(id)target
                          action:(SEL)action;
 @end
+
+@interface LRNotificationObserver (NSNotificationCenter_Object)
+
++ (instancetype)observerForName:(NSString *)name
+                         object:(id)object
+                          block:(LRNotificationObserverBlock)block;
+
++ (instancetype)observerForName:(NSString *)name
+                         object:(id)object
+                 operationQueue:(NSOperationQueue *)operationQueue
+                          block:(LRNotificationObserverBlock)block;
+
++ (instancetype)observerForName:(NSString *)name
+                         object:(id)object
+                  dispatchQueue:(dispatch_queue_t)dispatchQueue
+                          block:(LRNotificationObserverBlock)block;
+
++ (instancetype)observerForName:(NSString *)name
+                         object:(id)object
+                         target:(id)target
+                         action:(SEL)action;
+
++ (instancetype)observerForName:(NSString *)name
+                         object:(id)object
+                 operationQueue:(NSOperationQueue *)operationQueue
+                         target:(id)target
+                         action:(SEL)action;
+
++ (instancetype)observerForName:(NSString *)name
+                         object:(id)object
+                  dispatchQueue:(dispatch_queue_t)dispatchQueue
+                         target:(id)target
+                         action:(SEL)action;
+@end
+

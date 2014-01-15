@@ -63,6 +63,7 @@ static SEL sOneArgumentsSelector;
 @property (nonatomic, strong) NSNotificationCenter *notificationCenter;
 
 @property (nonatomic, copy) NSString *name;
+@property (nonatomic, weak) id object;
 
 // Blocked based
 @property (nonatomic, copy) LRNotificationObserverBlock block;
@@ -101,7 +102,15 @@ static SEL sOneArgumentsSelector;
 
 - (void)configureForName:(NSString *)name block:(LRNotificationObserverBlock)block
 {
+    [self configureForName:name object:nil block:block];
+}
+
+- (void)configureForName:(NSString *)name
+                  object:(id)object
+                   block:(LRNotificationObserverBlock)block
+{
     [self configureForName:name
+                    object:object
             operationQueue:nil
              dispatchQueue:nil
                      block:block];
@@ -112,6 +121,18 @@ static SEL sOneArgumentsSelector;
                    block:(LRNotificationObserverBlock)block
 {
     [self configureForName:name
+                    object:nil
+            operationQueue:operationQueue
+                     block:block];
+}
+
+- (void)configureForName:(NSString *)name
+                  object:(id)object
+          operationQueue:(NSOperationQueue *)operationQueue
+                   block:(LRNotificationObserverBlock)block
+{
+    [self configureForName:name
+                    object:object
             operationQueue:operationQueue
              dispatchQueue:nil
                      block:block];
@@ -122,12 +143,25 @@ static SEL sOneArgumentsSelector;
                    block:(LRNotificationObserverBlock)block
 {
     [self configureForName:name
+                    object:nil
+             dispatchQueue:dispatchQueue
+                     block:block];
+}
+
+- (void)configureForName:(NSString *)name
+                  object:(id)object
+           dispatchQueue:(dispatch_queue_t)dispatchQueue
+                   block:(LRNotificationObserverBlock)block
+{
+    [self configureForName:name
+                    object:object
             operationQueue:nil
              dispatchQueue:dispatchQueue
                      block:block];
 }
 
 - (void)configureForName:(NSString *)name
+                  object:(id)object
           operationQueue:(NSOperationQueue *)operationQueue
            dispatchQueue:(dispatch_queue_t)dispatchQueue
                    block:(LRNotificationObserverBlock)block
@@ -137,6 +171,7 @@ static SEL sOneArgumentsSelector;
     [self stopObserving];
     
     self.name = name;
+    self.object = object;
     self.operationQueue = operationQueue;
     self.dispatchQueue = dispatchQueue;
     self.block = block;
@@ -144,12 +179,24 @@ static SEL sOneArgumentsSelector;
     [self.notificationCenter addObserver:self
                                 selector:sOneArgumentsSelector
                                     name:name
-                                  object:nil];
+                                  object:object];
 }
 
 - (void)configureForName:(NSString *)name target:(id)target action:(SEL)action
 {
     [self configureForName:name
+                    object:nil
+                    target:target
+                    action:action];
+}
+
+- (void)configureForName:(NSString *)name
+                  object:(id)object
+				  target:(id)target
+				  action:(SEL)action
+{
+    [self configureForName:name
+                    object:object
                     target:target
                     action:action
             operationQueue:nil
@@ -162,6 +209,20 @@ static SEL sOneArgumentsSelector;
 				  action:(SEL)action
 {
     [self configureForName:name
+                    object:nil
+            operationQueue:operationQueue
+                    target:target
+                    action:action];
+}
+
+- (void)configureForName:(NSString *)name
+                  object:(id)object
+          operationQueue:(NSOperationQueue *)operationQueue
+				  target:(id)target
+				  action:(SEL)action
+{
+    [self configureForName:name
+                    object:object
                     target:target
                     action:action
             operationQueue:operationQueue
@@ -174,6 +235,7 @@ static SEL sOneArgumentsSelector;
 				  action:(SEL)action
 {
     [self configureForName:name
+                    object:nil
                     target:target
                     action:action
             operationQueue:nil
@@ -181,6 +243,21 @@ static SEL sOneArgumentsSelector;
 }
 
 - (void)configureForName:(NSString *)name
+                  object:(id)object
+           dispatchQueue:(dispatch_queue_t)dispatchQueue
+				  target:(id)target
+				  action:(SEL)action
+{
+    [self configureForName:name
+                    object:object
+                    target:target
+                    action:action
+            operationQueue:nil
+             dispatchQueue:dispatchQueue];
+}
+
+- (void)configureForName:(NSString *)name
+                  object:(id)object
                   target:(id)target
                   action:(SEL)action
           operationQueue:(NSOperationQueue *)operationQueue
@@ -189,6 +266,7 @@ static SEL sOneArgumentsSelector;
     [self stopObserving];
     
     self.name = name;
+    self.object = object;
     self.operationQueue = operationQueue;
     self.dispatchQueue = dispatchQueue;
     self.targetAction = [LRTargetAction targetActionWithTarget:target action:action];
@@ -213,7 +291,7 @@ static SEL sOneArgumentsSelector;
     [self.notificationCenter addObserver:self
                                 selector:correctSelector
                                     name:name
-                                  object:nil];
+                                  object:object];
 }
 
 #pragma mark - Callbacks
@@ -259,7 +337,7 @@ static SEL sOneArgumentsSelector;
 
 - (void)stopObserving
 {
-    [_notificationCenter removeObserver:self name:_name object:nil];
+    [_notificationCenter removeObserver:self name:_name object:_object];
     [self clear];
 }
 

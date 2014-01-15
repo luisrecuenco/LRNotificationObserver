@@ -56,3 +56,38 @@ typedef void(^LRNotificationObserverBlock)(NSNotification *note);
 - (void)stopObserving;
 
 @end
+
+@interface LRNotificationObserver (Object)
+
+- (void)configureForName:(NSString *)name
+                  object:(id)object
+                   block:(LRNotificationObserverBlock)block;
+
+- (void)configureForName:(NSString *)name
+                  object:(id)object
+          operationQueue:(NSOperationQueue *)operationQueue
+                   block:(LRNotificationObserverBlock)block;
+
+- (void)configureForName:(NSString *)name
+                  object:(id)object
+           dispatchQueue:(dispatch_queue_t)dispatchQueue
+                   block:(LRNotificationObserverBlock)block;
+
+- (void)configureForName:(NSString *)name
+                  object:(id)object
+				  target:(id)target
+				  action:(SEL)action;
+
+- (void)configureForName:(NSString *)name
+                  object:(id)object
+          operationQueue:(NSOperationQueue *)operationQueue
+				  target:(id)target
+				  action:(SEL)action;
+
+- (void)configureForName:(NSString *)name
+                  object:(id)object
+           dispatchQueue:(dispatch_queue_t)dispatchQueue
+				  target:(id)target
+				  action:(SEL)action;
+
+@end

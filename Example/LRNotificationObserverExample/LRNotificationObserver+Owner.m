@@ -30,8 +30,16 @@
               owner:(id)owner
               block:(LRNotificationObserverBlock)block;
 {
+    [self observeName:name object:nil owner:owner block:block];
+}
+
++ (void)observeName:(NSString *)name
+             object:(id)object
+              owner:(id)owner
+              block:(LRNotificationObserverBlock)block;
+{
     [self observeWithOwner:owner observerBlock:^LRNotificationObserver *{
-        return [self observerForName:name block:block];
+        return [self observerForName:name object:object block:block];
     }];
 }
 
@@ -40,8 +48,17 @@
      operationQueue:(NSOperationQueue *)operationQueue
               block:(LRNotificationObserverBlock)block
 {
+    [self observeName:name object:nil owner:owner operationQueue:operationQueue block:block];
+}
+
++ (void)observeName:(NSString *)name
+             object:(id)object
+              owner:(id)owner
+     operationQueue:(NSOperationQueue *)operationQueue
+              block:(LRNotificationObserverBlock)block
+{
     [self observeWithOwner:owner observerBlock:^LRNotificationObserver *{
-        return [self observerForName:name operationQueue:operationQueue block:block];
+        return [self observerForName:name object:object operationQueue:operationQueue block:block];
     }];
 }
 
@@ -50,8 +67,17 @@
       dispatchQueue:(dispatch_queue_t)dispatchQueue
               block:(LRNotificationObserverBlock)block
 {
+    [self observeName:name object:nil owner:owner dispatchQueue:dispatchQueue block:block];
+}
+
++ (void)observeName:(NSString *)name
+             object:(id)object
+              owner:(id)owner
+      dispatchQueue:(dispatch_queue_t)dispatchQueue
+              block:(LRNotificationObserverBlock)block
+{
     [self observeWithOwner:owner observerBlock:^LRNotificationObserver *{
-        return [self observerForName:name dispatchQueue:dispatchQueue block:block];
+        return [self observerForName:name object:object dispatchQueue:dispatchQueue block:block];
     }];
 }
 
@@ -60,8 +86,17 @@
              target:(id)target
              action:(SEL)action
 {
+    [self observeName:name object:nil owner:owner target:target action:action];
+}
+
++ (void)observeName:(NSString *)name
+             object:(id)object
+              owner:(id)owner
+             target:(id)target
+             action:(SEL)action
+{
     [self observeWithOwner:owner observerBlock:^LRNotificationObserver *{
-        return [self observerForName:name target:target action:action];
+        return [self observerForName:name object:object target:target action:action];
     }];
 }
 
@@ -71,8 +106,24 @@
              target:(id)target
              action:(SEL)action
 {
+    [self observeName:name
+               object:nil
+                owner:owner
+       operationQueue:operationQueue
+               target:target
+               action:action];
+}
+
++ (void)observeName:(NSString *)name
+             object:(id)object
+              owner:(id)owner
+     operationQueue:(NSOperationQueue *)operationQueue
+             target:(id)target
+             action:(SEL)action
+{
     [self observeWithOwner:owner observerBlock:^LRNotificationObserver *{
         return [self observerForName:name
+                              object:object
                       operationQueue:operationQueue
                               target:target
                               action:action];
@@ -85,8 +136,24 @@
              target:(id)target
              action:(SEL)action
 {
+    [self observeName:name
+               object:nil
+                owner:owner
+        dispatchQueue:dispatchQueue
+               target:target
+               action:action];
+}
+
++ (void)observeName:(NSString *)name
+             object:(id)object
+              owner:(id)owner
+      dispatchQueue:(dispatch_queue_t)dispatchQueue
+             target:(id)target
+             action:(SEL)action
+{
     [self observeWithOwner:owner observerBlock:^LRNotificationObserver *{
         return [self observerForName:name
+                              object:object
                        dispatchQueue:dispatchQueue
                               target:target
                               action:action];

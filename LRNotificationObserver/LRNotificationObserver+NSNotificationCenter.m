@@ -27,8 +27,15 @@
 + (instancetype)observerForName:(NSString *)name
                           block:(LRNotificationObserverBlock)block
 {
+    return [self observerForName:name object:nil block:block];
+}
+
++ (instancetype)observerForName:(NSString *)name
+                         object:(id)object
+                          block:(LRNotificationObserverBlock)block
+{
     return [self observerWithConfiguration:^(LRNotificationObserver *observer) {
-        [observer configureForName:name block:block];
+        [observer configureForName:name object:object block:block];
     }];
 }
 
@@ -36,8 +43,16 @@
                  operationQueue:(NSOperationQueue *)operationQueue
                           block:(LRNotificationObserverBlock)block
 {
+    return [self observerForName:name object:nil operationQueue:operationQueue block:block];
+}
+
++ (instancetype)observerForName:(NSString *)name
+                         object:(id)object
+                 operationQueue:(NSOperationQueue *)operationQueue
+                          block:(LRNotificationObserverBlock)block
+{
     return [self observerWithConfiguration:^(LRNotificationObserver *observer) {
-        [observer configureForName:name operationQueue:operationQueue block:block];
+        [observer configureForName:name object:object operationQueue:operationQueue block:block];
     }];
 }
 
@@ -45,8 +60,16 @@
                   dispatchQueue:(dispatch_queue_t)dispatchQueue
                           block:(LRNotificationObserverBlock)block
 {
+    return [self observerForName:name object:nil dispatchQueue:dispatchQueue block:block];
+}
+
++ (instancetype)observerForName:(NSString *)name
+                         object:(id)object
+                  dispatchQueue:(dispatch_queue_t)dispatchQueue
+                          block:(LRNotificationObserverBlock)block
+{
     return [self observerWithConfiguration:^(LRNotificationObserver *observer) {
-        [observer configureForName:name dispatchQueue:dispatchQueue block:block];
+        [observer configureForName:name object:object dispatchQueue:dispatchQueue block:block];
     }];
 }
 
@@ -54,8 +77,16 @@
                          target:(id)target
                          action:(SEL)action
 {
+    return [self observerForName:name object:nil target:target action:action];
+}
+
++ (instancetype)observerForName:(NSString *)name
+                         object:(id)object
+                         target:(id)target
+                         action:(SEL)action
+{
     return [self observerWithConfiguration:^(LRNotificationObserver *observer) {
-        [observer configureForName:name target:target action:action];
+        [observer configureForName:name object:object target:target action:action];
     }];
 }
 
@@ -64,8 +95,25 @@
                          target:(id)target
                          action:(SEL)action
 {
+    return [self observerForName:name
+                          object:nil
+                  operationQueue:operationQueue
+                          target:target
+                          action:action];
+}
+
++ (instancetype)observerForName:(NSString *)name
+                         object:(id)object
+                 operationQueue:(NSOperationQueue *)operationQueue
+                         target:(id)target
+                         action:(SEL)action
+{
     return [self observerWithConfiguration:^(LRNotificationObserver *observer) {
-        [observer configureForName:name operationQueue:operationQueue target:target action:action];
+        [observer configureForName:name
+                            object:object
+                    operationQueue:operationQueue
+                            target:target
+                            action:action];
     }];
 }
 
@@ -74,8 +122,18 @@
                          target:(id)target
                          action:(SEL)action
 {
+    return [self observerForName:name object:nil dispatchQueue:dispatchQueue target:target action:action];
+}
+
++ (instancetype)observerForName:(NSString *)name
+                         object:(id)object
+                  dispatchQueue:(dispatch_queue_t)dispatchQueue
+                         target:(id)target
+                         action:(SEL)action
+{
+    
     return [self observerWithConfiguration:^(LRNotificationObserver *observer) {
-        [observer configureForName:name dispatchQueue:dispatchQueue target:target action:action];
+        [observer configureForName:name object:object dispatchQueue:dispatchQueue target:target action:action];
     }];
 }
 
