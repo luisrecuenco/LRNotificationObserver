@@ -21,6 +21,8 @@
 		33B24ED018208B7000E866E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B24EB518208B7000E866E5 /* Foundation.framework */; };
 		33B24ED118208B7000E866E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B24EB918208B7000E866E5 /* UIKit.framework */; };
 		33B24ED918208B7000E866E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 33B24ED718208B7000E866E5 /* InfoPlist.strings */; };
+		33BA2CBE188605A300695361 /* LRNotificationObserver+NSNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 33BA2CBD188605A300695361 /* LRNotificationObserver+NSNotificationCenter.m */; };
+		33BA2CBF188605A300695361 /* LRNotificationObserver+NSNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 33BA2CBD188605A300695361 /* LRNotificationObserver+NSNotificationCenter.m */; };
 		7167C33F94364271AD3C8EFA /* libPods-LRNotificationObserverExampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB5CC8BA75804C65B7584705 /* libPods-LRNotificationObserverExampleTests.a */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +55,8 @@
 		33B24ECE18208B7000E866E5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		33B24ED618208B7000E866E5 /* LRNotificationObserverExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LRNotificationObserverExampleTests-Info.plist"; sourceTree = "<group>"; };
 		33B24ED818208B7000E866E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		33BA2CBC188605A300695361 /* LRNotificationObserver+NSNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LRNotificationObserver+NSNotificationCenter.h"; path = "../../LRNotificationObserver/LRNotificationObserver+NSNotificationCenter.h"; sourceTree = "<group>"; };
+		33BA2CBD188605A300695361 /* LRNotificationObserver+NSNotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "LRNotificationObserver+NSNotificationCenter.m"; path = "../../LRNotificationObserver/LRNotificationObserver+NSNotificationCenter.m"; sourceTree = "<group>"; };
 		B8EB2E55DE9045319A1D1CD3 /* Pods-LRNotificationObserverExampleTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LRNotificationObserverExampleTests.xcconfig"; path = "Pods/Pods-LRNotificationObserverExampleTests.xcconfig"; sourceTree = "<group>"; };
 		DB5CC8BA75804C65B7584705 /* libPods-LRNotificationObserverExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LRNotificationObserverExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -160,6 +164,8 @@
 			children = (
 				3333C74318208D1C0036A1C4 /* LRNotificationObserver.h */,
 				3333C74418208D1C0036A1C4 /* LRNotificationObserver.m */,
+				33BA2CBC188605A300695361 /* LRNotificationObserver+NSNotificationCenter.h */,
+				33BA2CBD188605A300695361 /* LRNotificationObserver+NSNotificationCenter.m */,
 			);
 			name = LRNotificationObserver;
 			sourceTree = "<group>";
@@ -295,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33B24EC618208B7000E866E5 /* AppDelegate.m in Sources */,
+				33BA2CBE188605A300695361 /* LRNotificationObserver+NSNotificationCenter.m in Sources */,
 				33B24EC218208B7000E866E5 /* main.m in Sources */,
 				3333C74518208D1C0036A1C4 /* LRNotificationObserver.m in Sources */,
 			);
@@ -304,6 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33BA2CBF188605A300695361 /* LRNotificationObserver+NSNotificationCenter.m in Sources */,
 				33000121183AE92E009DD610 /* LRNotificationObserverTests.m in Sources */,
 				3333C74618208D1C0036A1C4 /* LRNotificationObserver.m in Sources */,
 			);
