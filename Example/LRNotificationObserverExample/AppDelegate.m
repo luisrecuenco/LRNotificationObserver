@@ -52,7 +52,7 @@
                                                                target:self
                                                                action:@selector(foregroundObserverFired:)];
     
-    [LRNotificationObserver observeName:UIApplicationDidBecomeActiveNotification
+    [LRNotificationObserver observeName:UIApplicationDidReceiveMemoryWarningNotification
                                   owner:self
                           dispatchQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
                                   block:^(NSNotification *note) {
