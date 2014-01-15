@@ -23,6 +23,7 @@
 #import "AppDelegate.h"
 #import "LRNotificationObserver.h"
 #import "LRNotificationObserver+NSNotificationCenter.h"
+#import "LRNotificationObserver+Owner.h"
 
 @interface AppDelegate ()
 
@@ -50,6 +51,13 @@
                                                        operationQueue:[NSOperationQueue mainQueue]
                                                                target:self
                                                                action:@selector(foregroundObserverFired:)];
+    
+    [LRNotificationObserver observeName:UIApplicationDidBecomeActiveNotification
+                                  owner:self
+                          dispatchQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+                                  block:^(NSNotification *note) {
+                                      // Purge unnecessary cache
+                                  }];
     
     return YES;
 }
