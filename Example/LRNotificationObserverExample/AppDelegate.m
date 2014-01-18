@@ -43,8 +43,8 @@
     __weak typeof(self) wself = self;
     self.backgroundObserver = [LRNotificationObserver observerForName:UIApplicationDidEnterBackgroundNotification
                                                                 block:^(NSNotification *note) {
-                                                                    __strong typeof(wself) sself = wself;
-                                                                    [sself showLocalNotification];
+                                                                    __strong typeof(wself) self = wself;
+                                                                    [self showLocalNotification];
                                                                 }];
     
     self.foregroundObserver = [LRNotificationObserver observerForName:UIApplicationWillEnterForegroundNotification
@@ -56,7 +56,8 @@
                                   owner:self
                           dispatchQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
                                   block:^(NSNotification *note) {
-                                      // Purge unnecessary cache
+                                      __strong typeof(wself) self = wself;
+                                      [self handleMemoryWarning];
                                   }];
     
     return YES;
@@ -66,12 +67,7 @@
 
 - (void)foregroundObserverFired:(NSNotification *)notification
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Foreground observer fired"
-                                                    message:nil
-                                                   delegate:nil
-                                          cancelButtonTitle:@"ok"
-                                          otherButtonTitles:nil];
-    [alert show];
+    [self showAlertViewWithTitle:@"Foreground observer fired"];
 }
 
 - (void)showLocalNotification
@@ -80,6 +76,26 @@
     notification.alertBody = @"Background observer fired";
     notification.fireDate = [NSDate date];
     [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
+}
+
+- (void)handleMemoryWarning
+{
+    // This method is fired in a the global dispatch queue we specified,
+    // going back to the main queue to show the alert.
+    dispatch_async(dispatch_get_main_queue(), ^(void) {
+        [self showAlertViewWithTitle:@"Memory warning observer fired"];
+    });
+}
+
+- (void)showAlertViewWithTitle:(NSString *)title
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+                                                    message:nil
+                                                   delegate:nil
+                                          cancelButtonTitle:@"ok"
+                                          otherButtonTitles:nil];
+    
+    [alert show];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
