@@ -164,6 +164,8 @@
 
 + (void)observeWithOwner:(id)owner observerBlock:(LRNotificationObserver *(^)(void))observerBlock
 {
+    NSAssert(owner, @"Owner cannot be nil");
+    
     [self addObserver:observerBlock() asPropertyOfOwner:owner];
 }
 
