@@ -120,7 +120,7 @@ describe(@"LRNotificationObserverTests", ^{
                 
                 [notificationCenter postNotificationName:notificationName object:nil];
                 
-                [[theValue(completionBlockCalled) should] beYes];
+                [[theValue(completionBlockCalled) should] equal:theValue(YES)];
             });
             
             it(@"sut with operation queue block called async", ^{
@@ -137,8 +137,8 @@ describe(@"LRNotificationObserverTests", ^{
                 
                 [notificationCenter postNotificationName:notificationName object:nil];
                 
-                [[theValue(completionBlockCalled) should] beNo];
-                [[expectFutureValue(theValue(completionBlockCalled)) shouldEventually] beYes];
+                [[theValue(completionBlockCalled) should] equal:theValue(NO)];
+                [[expectFutureValue(theValue(completionBlockCalled)) shouldEventually] equal:theValue(YES)];
             });
             
             it(@"sut with dispatch queue block called async", ^{
@@ -155,8 +155,8 @@ describe(@"LRNotificationObserverTests", ^{
                 
                 [notificationCenter postNotificationName:notificationName object:nil];
                 
-                [[theValue(completionBlockCalled) should] beNo];
-                [[expectFutureValue(theValue(completionBlockCalled)) shouldEventually] beYes];
+                [[theValue(completionBlockCalled) should] equal:theValue(NO)];
+                [[expectFutureValue(theValue(completionBlockCalled)) shouldEventually] equal:theValue(YES)];
             });
             
             it(@"sut with wrong notification name block not called", ^{
@@ -173,7 +173,7 @@ describe(@"LRNotificationObserverTests", ^{
                 
                 [notificationCenter postNotificationName:anotherNotificationName object:nil];
                 
-                [[theValue(completionBlockCalled) should] beNo];
+                [[theValue(completionBlockCalled) should] equal:theValue(NO)];
             });
             
             it(@"sut with nil block should raise exception", ^{
@@ -225,8 +225,8 @@ describe(@"LRNotificationObserverTests", ^{
                 
                 [notificationCenter postNotificationName:notificationName object:nil];
                 
-                [[theValue(firstCompletionBlockCalled) should] beNo];
-                [[theValue(secondCompletionBlockCalled) should] beYes];
+                [[theValue(firstCompletionBlockCalled) should] equal:theValue(NO)];
+                [[theValue(secondCompletionBlockCalled) should] equal:theValue(YES)];
             });
             
             it(@"sut block not called after stopObserving", ^{
@@ -244,7 +244,7 @@ describe(@"LRNotificationObserverTests", ^{
                 
                 [notificationCenter postNotificationName:notificationName object:nil];
                 
-                [[theValue(completionBlockCalled) should] beNo];
+                [[theValue(completionBlockCalled) should] equal:theValue(NO)];
             });
             
             it(@"sut block should be called in correct operation queue", ^{
@@ -264,6 +264,25 @@ describe(@"LRNotificationObserverTests", ^{
                 [notificationCenter postNotificationName:notificationName object:nil];
                 
                 [[expectFutureValue(callbackQueue) shouldEventually] beIdenticalTo:opQueue];
+            });
+            
+            it(@"sut block should be called sync in main operation queue", ^{
+                
+                NSString *notificationName = @"aNotificationName";
+                
+                NSOperationQueue *opQueue = [NSOperationQueue mainQueue];
+                
+                __block BOOL completionBlockCalled = NO;
+                
+                [sut configureForName:notificationName
+                       operationQueue:opQueue
+                                block:^(NSNotification *note) {
+                                    completionBlockCalled = YES;
+                                }];
+                
+                [notificationCenter postNotificationName:notificationName object:nil];
+                
+                [[theValue(completionBlockCalled) should] equal:theValue(YES)];
             });
             
             it(@"sut block should be called in correct dispatch queue", ^{
@@ -288,6 +307,25 @@ describe(@"LRNotificationObserverTests", ^{
                 [notificationCenter postNotificationName:notificationName object:nil];
                 
                 [[expectFutureValue(theValue(queueContext == callbackQueueContext)) shouldEventually] beYes];
+            });
+            
+            it(@"sut block should be called sync in main dispatch queue", ^{
+                
+                NSString *notificationName = @"aNotificationName";
+                
+                dispatch_queue_t dispatchQueue = dispatch_get_main_queue();
+                
+                __block BOOL completionBlockCalled = NO;
+                
+                [sut configureForName:notificationName
+                        dispatchQueue:dispatchQueue
+                                block:^(NSNotification *note) {
+                                    completionBlockCalled = YES;
+                                }];
+                
+                [notificationCenter postNotificationName:notificationName object:nil];
+                
+                [[theValue(completionBlockCalled) should] equal:theValue(YES)];
             });
         });
         
