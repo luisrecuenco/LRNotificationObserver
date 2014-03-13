@@ -323,11 +323,25 @@ static SEL sOneArgumentsSelector;
 {
     if (self.operationQueue)
     {
-        [self.operationQueue addOperationWithBlock:block];
+        if ([NSThread isMainThread] && self.operationQueue == [NSOperationQueue mainQueue])
+        {
+            block();
+        }
+        else
+        {
+            [self.operationQueue addOperationWithBlock:block];
+        }
     }
     else if (self.dispatchQueue)
     {
-        dispatch_async(self.dispatchQueue, block);
+        if ([NSThread isMainThread] && self.dispatchQueue == dispatch_get_main_queue())
+        {
+            block();
+        }
+        else
+        {
+            dispatch_async(self.dispatchQueue, block);
+        }
     }
     else
     {
