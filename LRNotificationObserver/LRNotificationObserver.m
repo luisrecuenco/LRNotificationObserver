@@ -23,12 +23,6 @@
 #import "LRNotificationObserver.h"
 #import <objc/message.h>
 
-#if OS_OBJECT_USE_OBJC
-#define LRDispatchQueuePropertyModifier strong
-#else
-#define LRDispatchQueuePropertyModifier assign
-#endif
-
 #pragma mark - LRTargetAction
 
 @interface LRTargetAction : NSObject
@@ -73,7 +67,7 @@ static SEL sOneArgumentsSelector;
 
 // Calback queues
 @property (nonatomic, strong) NSOperationQueue *operationQueue;
-@property (nonatomic, LRDispatchQueuePropertyModifier) dispatch_queue_t dispatchQueue;
+@property (nonatomic, strong) dispatch_queue_t dispatchQueue;
 
 @end
 
@@ -360,13 +354,6 @@ static SEL sOneArgumentsSelector;
     _block = nil;
     _targetAction = nil;
     _operationQueue = nil;
-    
-#if !OS_OBJECT_USE_OBJC
-    if (_dispatchQueue)
-    {
-        dispatch_release(_dispatchQueue);
-    }
-#endif
     _dispatchQueue = nil;
 }
 
