@@ -1,5 +1,11 @@
 LRNotificationObserver
 ======================
+
+[![Build Status](http://img.shields.io/travis/luisrecuenco/LRNotificationObserver/master.svg?style=flat)](https://travis-ci.org/luisrecuenco/LRNotificationObserver)
+[![Pod Version](http://img.shields.io/cocoapods/v/LRNotificationObserver.svg?style=flat)](http://cocoadocs.org/docsets/LRNotificationObserver/)
+[![Pod Platform](http://img.shields.io/cocoapods/p/LRNotificationObserver.svg?style=flat)](http://cocoadocs.org/docsets/LRNotificationObserver/)
+[![Pod License](http://img.shields.io/cocoapods/l/LRNotificationObserver.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0.html)
+
 LRNotificationObserver is a smarter, simpler and better way to use NSNotificationCenter with [RAII](http://en.wikipedia.org/wiki/Resource_Acquisition_Is_Initialization).
 
 ### The problem about NSNotificationCenter
