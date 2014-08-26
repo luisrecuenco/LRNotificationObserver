@@ -21,7 +21,6 @@
 // THE SOFTWARE.
 
 #import "AppDelegate.h"
-#import "LRNotificationObserver.h"
 #import "LRNotificationObserver+NSNotificationCenter.h"
 #import "LRNotificationObserver+Owner.h"
 
