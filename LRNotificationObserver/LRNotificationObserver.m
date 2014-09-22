@@ -49,8 +49,7 @@
 
 #pragma mark - LRNotificationObserver
 
-static SEL sNoArgumentsSelector;
-static SEL sOneArgumentsSelector;
+static SEL sNotificationFiredAction;
 
 @interface LRNotificationObserver ()
 
@@ -77,8 +76,7 @@ static SEL sOneArgumentsSelector;
 {
     if (self == [LRNotificationObserver class])
     {
-        sNoArgumentsSelector = @selector(notificationFired);
-        sOneArgumentsSelector = @selector(notificationFired:);
+        sNotificationFiredAction = @selector(notificationFired:);
     }
 }
 
@@ -171,7 +169,7 @@ static SEL sOneArgumentsSelector;
     self.block = block;
     
     [self.notificationCenter addObserver:self
-                                selector:sOneArgumentsSelector
+                                selector:sNotificationFiredAction
                                     name:name
                                   object:object];
 }
@@ -267,37 +265,15 @@ static SEL sOneArgumentsSelector;
     
     NSUInteger selectorArgumentCount = LRSelectorArgumentCount(target, action);
     
-    SEL correctSelector = NULL;
-    
-    if (selectorArgumentCount == 0)
-    {
-        correctSelector = sNoArgumentsSelector;
-    }
-    else if (selectorArgumentCount == 1)
-    {
-        correctSelector = sOneArgumentsSelector;
-    }
-    else
-    {
-        NSAssert(NO, @"Wrong number of parameters");
-    }
+    NSParameterAssert(selectorArgumentCount <= 1);
     
     [self.notificationCenter addObserver:self
-                                selector:correctSelector
+                                selector:sNotificationFiredAction
                                     name:name
                                   object:object];
 }
 
 #pragma mark - Callbacks
-
-- (void)notificationFired
-{
-    dispatch_block_t notificationFiredBlock = ^{
-        objc_msgSend(self.targetAction.target, self.targetAction.action);
-    };
-    
-    [self executeNotificationFiredBlock:notificationFiredBlock];
-}
 
 - (void)notificationFired:(NSNotification *)notification
 {
@@ -306,8 +282,8 @@ static SEL sOneArgumentsSelector;
         {
             self.block(notification);
         }
-        
-        objc_msgSend(self.targetAction.target, self.targetAction.action, notification);
+        void (*action)(id, SEL, id) = (void (*)(id, SEL, id))objc_msgSend;
+        action(self.targetAction.target, self.targetAction.action, notification);
     };
     
     [self executeNotificationFiredBlock:notificationFiredBlock];
