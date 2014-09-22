@@ -163,13 +163,7 @@ Selector that specifies the message the receiver sends notificationObserver to n
 
 ### Tests
 
-In order to run the test suit, you should have the latest version of xctool. This can be done as follows.
-
-```
-rake test:prepare_for_xctool
-```
-
-After that, running the tests is as simple as executing the rakefile.
+Running the tests is as simple as executing the rakefile.
 
 ```
 rake
@@ -185,7 +179,7 @@ rake test:cocoa_pods
 
 ### Requirements
 
-LRNotificationObserver requires both iOS 6.0 and ARC.
+LRNotificationObserver requires either iOS 6.0 or Mac OS X 10.8 and ARC.
 
 You can still use LRNotificationObserver in your non-arc project. Just set -fobjc-arc compiler flag in every source file.
 
