@@ -1,5 +1,2 @@
 language: objective-c
-before_install:
-    - gem install cocoapods --no-rdoc --no-ri --no-document --quiet
-    - rake test:prepare_for_xctool
-script: rake test
+script: rake
