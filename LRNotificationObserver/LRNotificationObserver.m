@@ -263,7 +263,7 @@ static SEL sNotificationFiredAction;
     self.dispatchQueue = dispatchQueue;
     self.targetAction = [LRTargetAction targetActionWithTarget:target action:action];
     
-    NSUInteger selectorArgumentCount = LRSelectorArgumentCount(target, action);
+    __unused NSUInteger selectorArgumentCount = LRSelectorArgumentCount(target, action);
     
     NSParameterAssert(selectorArgumentCount <= 1);
     
