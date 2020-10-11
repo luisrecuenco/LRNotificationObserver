@@ -171,7 +171,7 @@ rake
 
 ### Example
 
-To run the simple example, remember to install cocoa pods dependencies first.
+To run the simple example, remember to install CocoaPods dependencies first.
 
 ```
 rake test:cocoa_pods
